@@ -1,0 +1,270 @@
+@font-face{
+    font-family: cartwheel;
+    src: url(Font/Cartwheel.otf);
+}
+
+@font-face{
+    font-family: KOMTXT_;
+    src: url(Font/KOMTXT__.ttf);
+}
+
+/* Bagian dari Navbar atau Tombol MORE */
+header{
+    position: absolute;
+    width: 100%;
+    z-index: 1000;
+}
+
+#moreButton{
+    box-sizing: content-box;
+    width: 120px;
+    background-color: #fff;
+    opacity: 0.8;
+    left: 50%;
+    top: 50%;
+    margin-top: 400px;
+    transform: translateX(-50%);
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.6em;
+    box-shadow: 0 0.9em 2.8em rgba(86, 66, 0, 0.4);
+    font-family: '8bit wonder';
+}
+
+#back{
+    width: 100%;
+}
+
+.offcanvas-header{
+    display: flex;
+    justify-content: flex-end;
+}
+
+h4.offcanvas-title{
+    font-family: cartwheel;
+    text-shadow: 0 0 20px #00fffb, 0 0 40px #0081bc;
+}
+
+.paragraf-web{
+    font-family: KOMTXT_;
+    font-size: 12pt;
+}
+
+.logo-brand,
+.logo-title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-brand img{
+    width: 200px;
+    height: auto;
+    margin: 0 20px 5px 20px;
+}
+
+.logo-title{
+    margin-bottom: 10px;
+}
+/* Bagian dari Navbar atau Tombol MORE selesai*/
+
+@font-face{
+    font-family: '8bit wonder';
+    src: url('Font/8-BIT\ WONDER.TTF');
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+body{
+    background: url(Cards_Game/Background/JapaneseValley.gif) center center fixed;
+    background-size: cover;
+}
+
+.wrapper{
+    box-sizing: content-box;
+    width: 26.87rem;
+    padding: 2.5em 3em;
+    background-color: #fff;
+    opacity: 0.8;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    border-radius: 0.6em;
+    box-shadow: 0 0.9em 2.8em rgba(86, 66, 0, 0.4);
+}
+
+.game-container{
+    position: relative;
+    width: 100%;
+    display: grid;
+    gap: 0.6em;
+}
+
+.stats-container{
+    text-align: right;
+    margin-bottom: 1.2em;
+}
+
+.stats-container span{
+    font-weight: 600;
+}
+
+.card-container{
+    position: relative;
+    width: 6.25em;
+    height: 6.25em;
+    cursor: pointer;
+}
+
+.card-before,
+.card-after{
+    position: absolute;
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 4px solid #000;
+    transition: transform 0.7s ease-out;
+    backface-visibility: hidden;
+}
+
+.card-before{
+    background-color: #f4c531;
+    font-size: 2.8em;
+    font-weight: 600;
+}
+
+.card-after{
+    background-color: #fff;
+    transform: rotateY(180deg);
+}
+
+.card-after img{
+    object-fit: cover;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.card-container.flipped .card-before{
+    transform: rotateY(180deg);
+}
+
+.card-container.flipped .card-after{
+    transform: rotateY(0deg);
+}
+
+.controls-container{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background: url(Cards_Game/Background/JapaneseGarden.gif) center center fixed;
+    background-size: cover;
+    top: 0;
+}
+
+#stop,
+#start{
+    border: none;
+    border-radius: 0.3em;
+    padding: 1em 1.5em;
+    cursor: pointer;
+    font-size: 1.5em;
+    font-family: '8bit wonder';
+    opacity: 0;
+    animation: slideTop 1s ease forwards;
+    animation-delay: .7s;
+}
+
+#stop:hover,
+#start:hover{
+    color: rgb(27, 93, 216);
+}
+
+#stop{
+    font-size: 1.1em;
+    display: block;
+    margin: 1.1em auto 0 auto;
+    background-color: #000;
+    color: #fff;
+}
+
+.controls-container button{
+    font-size: 1.3em;
+    box-shadow: 0 0.6em 2em rgba(86, 66, 0, 0.2);
+}
+
+.hide{
+    display: none;
+}
+
+#result{
+    text-align: center;
+}
+
+#result h2{
+    font-size: 2.5em;
+}
+
+#result h4{
+    font-size: 1.8em;
+    margin: 0.6em 0 1em 0;
+}
+
+@keyframes slideTop{
+    0%{
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@media only screen and (max-width: 600px){
+    .wrapper{
+        width: 50%;
+    }
+
+    .card-container{
+        width: 11.5vw;
+        height: 11.5vw;
+        
+    }
+
+    #stop,
+    #start{
+        font-size: 1em;
+        padding: 1em 1.5em;
+    }
+
+    #moreButton{
+        width: 96px;
+        margin-top: 380px;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .wrapper {
+        width: 28%;
+    }
+
+    .card-container{
+        width: 6.5vw;
+        height: 6.5vw;
+    }
+}
